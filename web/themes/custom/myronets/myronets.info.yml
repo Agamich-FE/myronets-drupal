@@ -1,0 +1,14 @@
+name: Myronets Custom Drupal Theme
+core_version_requirement: ^10
+type: theme
+description: 'Specific custom Drupal theme'
+base theme: olivero
+
+regions:
+  header: Header
+  breadcrumb: Breadcrumb
+  highlighted: Highlighted
+  content: Content
+  footer: Footer
+
+

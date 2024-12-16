@@ -1,0 +1,110 @@
+# Ignore .env files
+.env
+
+# There shouldn't be any reason to have SQL dumps in our repository
+*.sql
+
+# Ignore Open Social Scripts installed via Composer
+scripts/social
+
+# Don't commit generated certificates.
+certs/
+
+# Ignore external packages
+vendor/
+
+# Ignore scaffold files in supported web roots
+.editorconfig
+.gitattributes
+
+/config
+files_private
+html/.csslintrc
+html/.eslintignore
+html/.eslintrc.json
+html/.ht.router.php
+html/.htaccess
+html/INSTALL.txt
+html/README.md
+html/autoload.php
+html/core/
+html/example.gitignore
+html/index.php
+
+# We want to add several of our Cablecar hosted libraries to our html/libraries to install them correctly
+# so we exclude them, note the trailing /* is significant:
+# The pattern dir/ excludes a directory named dir and (implicitly) everything under it.
+# With dir/, Git will never look at anything under dir, and thus will never apply any of the “un-exclude” patterns to anything under dir.
+# The pattern dir/* says nothing about dir itself; it just excludes everything under dir.
+# With dir/*, Git will process the direct contents of dir, giving other patterns a chance to “un-exclude” some bit of the content (!dir/sub/).
+!html/libraries
+html/libraries/*
+!html/libraries/social_ckeditor5_build_without_collaboration
+!html/libraries/social_ckeditor5_build_with_collaboration
+
+html/modules/README.txt
+html/modules/contrib/
+html/profiles/README.txt
+html/profiles/contrib/
+html/sites/README.txt
+html/sites/default/default.services.yml
+html/sites/default/default.settings.php
+html/sites/development.services.yml
+html/sites/example.settings.local.php
+html/sites/example.sites.php
+html/sites/simpletest
+html/sites/default/files
+html/sites/default/settings.local.php
+html/sites/default/settings.php
+html/themes/README.txt
+html/themes/contrib/
+html/update.php
+html/web.config
+html/simplesaml
+test-reports
+
+web/.csslintrc
+web/.eslintignore
+web/.eslintrc.json
+web/.ht.router.php
+web/.htaccess
+web/INSTALL.txt
+web/README.md
+web/autoload.php
+web/core/
+web/example.gitignore
+web/index.php
+web/libraries
+web/modules/README.txt
+web/modules/contrib/
+web/profiles/README.txt
+web/profiles/contrib/
+web/sites/README.txt
+web/sites/default/default.services.yml
+web/sites/default/default.settings.php
+web/sites/development.services.yml
+web/sites/example.settings.local.php
+web/sites/example.sites.php
+web/themes/README.txt
+web/themes/contrib/
+web/update.php
+web/web.config
+web/simplesaml
+
+# Ignore files created by our conductor plugin
+html/modules/**/vendor
+web/modules/**/vendor
+html/modules/**/node_modules
+html/modules/**/package-lock.json
+
+## Directory-based project format:
+.DS_Store
+.idea
+.phpunit.result.cache
+
+# AsyncAPI
+events/docs
+events/asyncapi.aggregated.yml
+
+# Webhooks Bridge
+applications/convoy_bridge/target/
